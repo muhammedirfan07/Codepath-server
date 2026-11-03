@@ -21,7 +21,7 @@ exports.mentorRegisterController =async(req,res)=>{
     
     const existedMentor = await Mentors.findOne ({email})
     if(existedMentor){
-      return res.status(406).json({message:" email all ready exist please login.."})
+      return res.status(406).json({error:" email all ready exist please login.."})
     }
    
    const newMentor = new Mentors({
